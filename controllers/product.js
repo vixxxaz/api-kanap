@@ -1,5 +1,6 @@
-const uuidv7 = require('uuid/v7')
+const uuidv7 = require('uuidv7')
 const Product = require('../models/Product');
+
 
 exports.getAllProducts = (req, res, next) => {
   Product.find().then(
