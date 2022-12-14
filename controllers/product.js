@@ -1,4 +1,4 @@
-const uuid = require('uuid/v1');
+import { v4 as uuidv4 } from 'uuid';
 const Product = require('../models/Product');
 
 exports.getAllProducts = (req, res, next) => {
@@ -77,7 +77,7 @@ exports.orderProducts = (req, res, next) => {
   }
   Promise.all(queries).then(
     (products) => {
-      const orderId = uuid();
+      const orderId = uuidv4();
       return res.status(201).json({
         contact: req.body.contact,
         products: products,
